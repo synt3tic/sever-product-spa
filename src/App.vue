@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import MyButton from './components/UI/MyButton/MyButton.vue';
+import SeButton from './components/UI/SeButton/SeButton.vue';
 </script>
 
 <template>
-  <my-button />
+  <se-button />
 </template>
 
 <style scoped></style>
