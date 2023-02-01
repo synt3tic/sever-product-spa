@@ -11,5 +11,6 @@ module.exports = {
     // 'vue/no-unused-vars': 'error'
     'no-console': 'error',
     semi: 'error',
+    quotes: [2, 'single', { avoidEscape: true }],
   },
 };

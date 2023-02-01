@@ -1,9 +1,8 @@
-<script setup lang="ts">
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <div>
-    <button class="button">button</button>
+    <button class="button"></button>
   </div>
 </template>
 

@@ -1,0 +1,13 @@
+name: sever
+services:
+  sever-spa:
+    image: halfmane/main:sever-product-spa
+    container_name: sever-spa
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '5173:5173'
+    volumes:
+      - .:/usr/src/client:rw
+
