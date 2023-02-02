@@ -1,7 +1,7 @@
 name: sever
 services:
   sever-spa:
-    image: halfmane/main:sever-product-spa
+    image: halfmane/main:latest
     container_name: sever-spa
     build:
       context: .

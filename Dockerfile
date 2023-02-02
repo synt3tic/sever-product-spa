@@ -1,4 +1,4 @@
-FROM node:current-alpine3.17
+FROM node:slim
 
 RUN mkdir -p /usr/src/client
 WORKDIR /usr/src/client
