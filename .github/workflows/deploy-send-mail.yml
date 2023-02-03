@@ -1,9 +1,9 @@
-name: Linter
+name: Build and send mail
 on: workflow_dispatch
 jobs:
   deploy:
-      runs-on: ubuntu-latest
-      steps:
+    runs-on: ubuntu-latest
+    steps:
       - name: Get my repo
         uses: actions/checkout@v3
       - name: install dependencies
