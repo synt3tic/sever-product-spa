@@ -20,5 +20,4 @@ jobs:
           secure: true
           to: mel04nax@gmail.com
           subject: Github Actions job result
-          from: Vladislav devOps
           body: Держи хех)
