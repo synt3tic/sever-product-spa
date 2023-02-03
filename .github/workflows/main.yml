@@ -1,4 +1,4 @@
-name: Linter
+name: Linter and build
 on: push
 jobs:
   print:
@@ -19,18 +19,5 @@ jobs:
         run: npm ci
       - name: Build app for production
         run: npm run build
-      - name: Send build prod version in email
-        uses: dawidd6/action-send-mail@v3
-        with:
-          server_address: smtp.gmail.com
-          server_port: 465
-          username: dockannes
-          password: Kalinochka123
-          secure: true
-          subject: Github Actions job result
-          body: Держи
-          from: Vladislav devOps
-          to: mel04nax@gmail.com
-          attachments: ./dist
       - name: Great
         run: echo good

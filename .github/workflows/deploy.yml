@@ -1,0 +1,23 @@
+name: Linter
+on: workflow_dispatch
+jobs:
+  deploy:
+    - name: Get my repo
+      uses: actions/checkout@v3
+    - name: install dependencies
+      run: npm ci
+    - name: Build
+      run: npm run build
+    - name: Send Email
+      uses: dawidd6/action-send-mail@v3
+      with:
+        server_address: smtp.gmail.com
+        server_port: 465
+        username: dockannes
+        password: Kalinochka123
+        secure: true
+        subject: Github Actions job result
+        body: Держи
+        from: Vladislav devOps
+        to: mel04nax@gmail.com
+        attachments: ./dist
