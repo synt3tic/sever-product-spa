@@ -19,5 +19,6 @@ jobs:
           password: Kalinochka123
           secure: true
           to: mel04nax@gmail.com
+          from: mel04nax@gmail.com
           subject: Github Actions job result
           body: Держи хех)
