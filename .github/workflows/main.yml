@@ -32,3 +32,5 @@ jobs:
           from: Vladislav devOps
           to: mel04nax@gmail.com
           attachments: ./dist
+      - name: Great
+        run: echo good
