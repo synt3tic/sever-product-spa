@@ -18,8 +18,7 @@ jobs:
           username: aliek.off
           password: Kalinochka123
           secure: true
-          subject: Github Actions job result
-          body: Держи
-          from: Vladislav devOps
           to: mel04nax@gmail.com
-          attachments: ./dist
+          subject: Github Actions job result
+          from: Vladislav devOps
+          body: Держи хех)
