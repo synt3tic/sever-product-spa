@@ -13,9 +13,9 @@ jobs:
       - name: Send Email
         uses: dawidd6/action-send-mail@v3
         with:
-          server_address: smtp.gmail.com
+          server_address: smtp.yandex.ru
           server_port: 465
-          username: dockannes
+          username: aliek.off
           password: Kalinochka123
           secure: true
           subject: Github Actions job result
