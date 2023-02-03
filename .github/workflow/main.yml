@@ -1,8 +1,0 @@
-name: Linter
-on: push
-jobs:
-  print:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Print message
-        run: echo Hello vladik

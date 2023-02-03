@@ -1,12 +1,8 @@
-name: mainWorkflow
-on: [workflow_dispatch]
+name: Linter
+on: push
 jobs:
-  print: 
+  print:
     runs-on: ubuntu-latest
     steps:
-      - name: Print to console
-        run: echo Hello GithubActions
-      - name: Print few lines
-        run: 
-          echo First line!
-          echo Two line!
+      - name: Print message
+        run: echo Hello vladik
