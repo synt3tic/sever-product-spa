@@ -2,7 +2,7 @@
 import SeSvg from '@/components/UI/SeSvg/SeSvg.vue';
 import { computed } from 'vue';
 
-const emit = defineEmits(['clickOnButton']);
+const emit = defineEmits(['click']);
 
 interface Props {
   active?: boolean;
@@ -20,7 +20,7 @@ const props = withDefaults(defineProps<Props>(), {
   icon: '',
 });
 
-const buttonClasses = computed(() => {
+const classList = computed(() => {
   return  {
     'se-button': true,
     'se-button_secondary': props.variation === 'secondary',
@@ -34,13 +34,13 @@ const buttonClasses = computed(() => {
 
 <template>
   <button
-    :class="buttonClasses"
+    :class="classList"
     :disabled="props.disabled"
-    @click="emit('clickOnButton')"
+    @click="emit('click')"
   >
     <se-svg v-if="icon" :name="icon" class="svg-icon"/>
     <span class="se-button__text">
-      <slot></slot>
+      <slot />
     </span>
   </button>
 </template>
