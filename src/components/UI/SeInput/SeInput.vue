@@ -1,14 +1,15 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { computed, defineProps } from 'vue';
 import SeButton from '@/components/UI/SeButton/SeButton.vue';
 
 interface Props {
-  disabled?: boolean,
+  disabled?: boolean;
   size?: string;
   variation?: string;
   icon?: string;
   placeholder?: string;
   type?: string;
+  modelValue?: string;
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -18,40 +19,57 @@ const props = withDefaults(defineProps<Props>(), {
   icon: '',
   placeholder: '',
   type: 'text',
+  modelValue: '',
 });
 
-const inputValue = ref('');
+const emit = defineEmits(['update:modelValue']);
+
+const classList = computed(() => {
+  return {
+    input: true,
+    'input_with-icon': props.icon,
+  };
+});
 
 </script>
 
 <template>
   <div class="se-input">
     <input
-      v-model="inputValue"
+      :value="props.modelValue"
       :type="props.type"
       :placeholder="props.placeholder"
-      class="input"
       :disabled="props.disabled"
+      :class="classList"
+      @input="emit('update:modelValue', $event.target.value)"
     />
     <se-button
       v-if="props.icon"
       :icon="props.icon"
-      class="z-10"
+      :disabled="props.disabled"
+      class="button"
       size="xs"
       variation="transparent"
-      :disabled="props.disabled"
     />
   </div>
 </template>
 
 <style scoped>
 .se-input {
-  @apply flex relative justify-end w-96 p-2 h-10 rounded caret-green;
+  @apply relative flex justify-end h-10 rounded caret-green;
 }
 
 .input {
-  @apply absolute w-full h-full top-0 left-0 p-2 border border-dark-gray rounded border-solid
+  @apply h-full w-full p-2 border border-dark-gray rounded border-solid
   duration-300 focus:outline-none placeholder:text-dark-gray focus:outline-0 focus:border-green
   focus:shadow-lg focus:shadow-green/20 focus:duration-300 disabled:bg-gray;
+}
+
+.input_with-icon {
+  @apply pr-8
+}
+
+.button {
+  @apply absolute top-2 right-2
 }
 </style>
