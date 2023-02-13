@@ -4,7 +4,7 @@ import SeInput from '@/components/UI/SeInput/SeInput.vue';
 
 <template>
   <div class="p-6">
-    <se-input />
+    <se-input icon="search"/>
   </div>
 
 </template>
