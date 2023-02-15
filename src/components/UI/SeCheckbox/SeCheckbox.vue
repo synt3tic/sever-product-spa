@@ -7,7 +7,7 @@ interface Props {
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  size: 'sm',
+  size: 'md',
   checked: false,
 });
 
@@ -32,7 +32,6 @@ const checkmarkClasses = computed(() => {
     checkmark_xl: props.size === 'xl',
   };
 });
-
 </script>
 
 <template>
@@ -49,7 +48,7 @@ const checkmarkClasses = computed(() => {
 
 <style scoped>
 .se-checkbox {
-  @apply block relative items-center cursor-pointer select-none;
+  @apply block relative cursor-pointer select-none;
 }
 
 .se-checkbox_sm{
@@ -80,7 +79,7 @@ const checkmarkClasses = computed(() => {
 }
 
 .checkmark_sm {
-  @apply w-4 h-4 after:left-[5.5px] after:top-[2px] after:w-1 after:h-2;
+  @apply w-4 h-4 after:left-[5px] after:top-[2px] after:w-1 after:h-2;
 }
 
 .checkmark_md {
