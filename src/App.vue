@@ -1,15 +1,15 @@
 <script setup lang="ts">
-import SeInput from '@/components/UI/SeInput/SeInput.vue';
+import SeCheckbox from '@/components/UI/SeCheckbox/SeCheckbox.vue';
 import { ref } from 'vue';
 
-const xui = ref('');
+const check = ref(false);
+
 </script>
 
 <template>
   <div class="p-6">
-    <se-input v-model="xui" icon="search"/>
+    <se-checkbox v-model:checked="check">ONE</se-checkbox>
   </div>
-
 </template>
 
 <style scoped></style>
