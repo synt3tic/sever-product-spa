@@ -1,15 +1,42 @@
 <script setup lang="ts">
-import SeCheckbox from '@/components/UI/SeCheckbox/SeCheckbox.vue';
+import SeRadioButton from '@/components/UI/SeRadioButton/SeRadioButton.vue';
 import { ref } from 'vue';
 
-const check = ref(false);
+const contacts = ref([
+  {
+    id: 1,
+    value: 'phone',
+    name: 'Phone',
+    checked: false,
+  },
+  {
+    id: 2,
+    value: 'email',
+    name: 'E-mail',
+    checked: false,
+  },
+  {
+    id: 3,
+    value: 'mail',
+    name: 'Mail',
+    checked: false,
+  },
+]);
 
 </script>
 
 <template>
-  <div class="p-6">
-    <se-checkbox v-model:checked="check">ONE</se-checkbox>
+  <div class="flex flex-col gap-3 p-6">
+    <se-radio-button
+      v-for="radio in contacts"
+      :key="radio.id"
+      :value="radio.value"
+      v-model:checked="radio.checked"
+    >
+      {{ radio.name }}
+    </se-radio-button>
   </div>
+
 </template>
 
 <style scoped></style>
