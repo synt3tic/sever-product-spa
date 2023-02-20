@@ -7,7 +7,7 @@ interface Props {
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  size: 'sm',
+  size: 'md',
   checked: false,
 });
 
@@ -80,11 +80,11 @@ const checkmarkClasses = computed(() => {
 }
 
 .checkmark_sm {
-  @apply w-4 h-4 after:left-[5.5px] after:top-[2px] after:w-1 after:h-2;
+  @apply w-4 h-4 after:left-[0.325rem] after:top-0.5 after:w-1 after:h-2;
 }
 
 .checkmark_md {
-  @apply w-5 h-5 after:left-[6.5px] after:top-[1.1px] after:w-1.5 after:h-3;
+  @apply w-5 h-5 after:left-[0.4rem] after:top-[0.08rem] after:w-1.5 after:h-3;
 }
 
 .checkmark_lg {
