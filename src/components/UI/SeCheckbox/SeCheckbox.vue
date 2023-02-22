@@ -3,12 +3,12 @@ import { computed } from 'vue';
 
 interface Props {
   size?: string;
-  checked?: boolean;
+  modelValue?: boolean;
 }
 
 const props = withDefaults(defineProps<Props>(), {
   size: 'md',
-  checked: false,
+  modelValue: false,
 });
 
 const emit = defineEmits(['update:modelValue']);
@@ -40,8 +40,8 @@ const checkmarkClasses = computed(() => {
     <slot />
     <input
       type="checkbox"
-      :checked="props.checked"
-      @change="emit('update:checked', $event.target.checked)"
+      :checked="props.modelValue"
+      @change="emit('update:modelValue', $event.target.checked)"
     >
     <span :class="checkmarkClasses" />
   </label>
