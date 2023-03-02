@@ -32,7 +32,6 @@ const checkmarkClasses = computed(() => {
     checkmark_xl: props.size === 'xl',
   };
 });
-
 </script>
 
 <template>
@@ -49,7 +48,7 @@ const checkmarkClasses = computed(() => {
 
 <style scoped>
 .se-checkbox {
-  @apply block relative items-center cursor-pointer select-none;
+  @apply block relative cursor-pointer select-none;
 }
 
 .se-checkbox_sm{
