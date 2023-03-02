@@ -3,6 +3,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@tailwind variants;
 
 @layer base {
   input[type="number"]::-webkit-inner-spin-button,
@@ -13,7 +14,26 @@
   input[type=number] {
     -moz-appearance: textfield;
   }
+  ::-webkit-scrollbar {
+    width: 0.3rem;
+  }
+  ::-webkit-scrollbar-track {
+    background: none;
+  }
+  ::-webkit-scrollbar-thumb {
+    margin-top: 0.25rem;
+    background: #ff6633;
+    border-radius: 0.18rem;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #a6a6a6;
+  }
+  ::-webkit-scrollbar-thumb:active {
+    border: 0.04rem solid white;
+  }
 }
 * {
   @apply font-sans;
 }
+
+
