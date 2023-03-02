@@ -2,7 +2,7 @@
 import SeSvg from '@/components/UI/SeSvg/SeSvg.vue';
 import { computed } from 'vue';
 
-const emit = defineEmits(['click']);
+const emit = defineEmits(['clickOnButton']);
 
 interface Props {
   active?: boolean;
@@ -38,7 +38,7 @@ const classList = computed(() => {
   <button
     :class="classList"
     :disabled="props.disabled"
-    @click="emit('click')"
+    @click="emit('clickOnButton')"
   >
     <se-svg v-if="icon" :name="icon" class="svg-icon"/>
       <slot />
@@ -47,7 +47,7 @@ const classList = computed(() => {
 
 <style>
 .se-button {
-  @apply flex justify-center items-center h-10 p-2 gap-2 bg-transparent border border-solid border-green rounded
+  @apply flex justify-center items-center p-2 gap-2 bg-transparent border border-solid border-green rounded
   text-green duration-300 hover:duration-300 hover:bg-green hover:text-white disabled:bg-gray disabled:text-dark-gray
   disabled:border-none active:text-sm active:duration-300;
 }
@@ -61,7 +61,7 @@ const classList = computed(() => {
 }
 
 .se-button_secondary {
-  @apply justify-start gap-7 bg-green text-white duration-300 hover:bg-white hover:text-green active:text-sm;
+  @apply justify-start gap-7 bg-green text-white border border-solid border-green duration-300 hover:bg-white hover:text-green active:text-sm;
 }
 
 .se-button_secondary .svg-icon path {
@@ -81,7 +81,7 @@ const classList = computed(() => {
 }
 
 .se-button_xs {
-  @apply w-6 h-6 p-0 gap-0 border-none;
+  @apply p-0 gap-0;
 }
 
 .se-button_sm {
